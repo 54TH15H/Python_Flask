@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<head>
+  <title>Telegram Image Search</title>
+</head>
+<body>
+  <h1>Upload an Image to Search in Telegram Groups</h1>
+  <form method="post" enctype="multipart/form-data">
+    <input type="file" name="image" required>
+    <input type="submit" value="Search">
+  </form>
+
+  {% if matches %}
+    <h2>Results:</h2>
+    <ul>
+      {% for match in matches %}
+        <li>{{ match }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+</body>
+</html>
